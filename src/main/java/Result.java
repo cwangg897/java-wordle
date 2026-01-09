@@ -19,4 +19,9 @@ public class Result {
         boards[currentBoardsIndex] = board;
         currentBoardsIndex++;
     }
+
+    public String getBoard() {
+        return board.toString();
+    }
+
 }

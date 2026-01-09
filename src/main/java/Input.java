@@ -12,5 +12,9 @@ public class Input {
         result.addTile(tile);
     }
 
+    public String getValue() {
+        return this.value;
+    }
+
 
 }

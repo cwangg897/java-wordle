@@ -5,14 +5,6 @@ public class Word {
     private Answer answer;
     private Input input;
 
-    public Word() {
-        this.answer = new Answer();
-    }
-
-    public Word(Answer answer) {
-        this.answer = answer;
-    }
-
     public Word(Input input, Answer answer) {
         this.input = input;
         this.answer = answer;
@@ -48,11 +40,27 @@ public class Word {
     }
 
     // 입력 : APPLE
-    // 답 : APPLE
+    // 답 : AIRPO
     public void compareAnswer() {
+        String answer = this.answer.getValue();
+        String input = this.input.getValue();
 
+        for (int i = 0; i < answer.length(); i++) {
+            char answerChar = answer.charAt(i);
+            char inputChar = input.charAt(i);
 
+            if (answerChar == inputChar) {
+                this.input.saveTile(ResultValues.그린.getValue());
+                continue;
+            }
 
+            if (answer.indexOf(inputChar) >= 0) {
+                this.input.saveTile(ResultValues.옐로우.getValue());
+                continue;
+            }
 
+            this.input.saveTile(ResultValues.그레이.getValue());
+        }
     }
+
 }

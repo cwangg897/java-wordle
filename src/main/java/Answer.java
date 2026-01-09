@@ -5,4 +5,8 @@ public class Answer {
     public Answer(){
         this.value = "APPLE";
     }
+
+    public String getValue(){
+        return this.value;
+    }
 }
