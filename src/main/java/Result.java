@@ -5,20 +5,20 @@ public class Result {
     private int currentBoardsIndex = 0;
 
     public Result() {
-        board = new StringBuilder();
+        this.board = new StringBuilder();
     }
 
     public void addTile(String tile) {
-        board.append(tile);
+        this.board.append(tile);
     }
 
     public void addBoard() {
-        boards[currentBoardsIndex] = board;
+        this.boards[currentBoardsIndex] = this.board;
         currentBoardsIndex++;
     }
 
     public String getBoard() {
-        return board.toString();
+        return this.board.toString();
     }
 
     public int getCurrentTryCount() {
@@ -31,5 +31,9 @@ public class Result {
 
     public void setBoard(StringBuilder board) {
         this.board = board;
+    }
+
+    public StringBuilder[] getBoards() {
+        return boards;
     }
 }

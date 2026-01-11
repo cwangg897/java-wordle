@@ -10,14 +10,14 @@ public class Word {
         this.answer = answer;
     }
 
-    public void valid(String input) {
+    public void valid() {
         // TODO. 정책 논의 필요 (횟수 차감 여부)
 
-        validNull(input);
+        validNull(input.getValue());
 
-        validLength(input);
+        validLength(input.getValue());
 
-        validAlphabet(input);
+        validAlphabet(input.getValue());
 
     }
 
@@ -28,13 +28,13 @@ public class Word {
     }
 
     public void validLength(String input) throws IllegalArgumentException {
-        if (input.length() != WordCondition.입력_제한_길이.ordinal()) {
+        if (input.length() != WordCondition.입력_제한_길이.getValue()) {
             throw new IllegalArgumentException("길이가 일치하지 않습니다.");
         }
     }
 
     public void validAlphabet(String input) {
-        if (!input.toLowerCase().matches("[a-z]")) {
+        if (!input.matches("(?i)[a-z]+")) {
             throw new IllegalArgumentException("단어는 알파벳이어야 합니다.");
         }
     }
