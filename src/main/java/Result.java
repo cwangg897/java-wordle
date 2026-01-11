@@ -13,15 +13,16 @@ public class Result {
     }
 
     public void addBoard() {
-        if (WordCondition.입력_제한_횟수.getValue() <= currentBoardsIndex) {
-            throw new RuntimeException("입력 제한 횟수를 넘어 갑니다");
-        }
         boards[currentBoardsIndex] = board;
         currentBoardsIndex++;
     }
 
     public String getBoard() {
         return board.toString();
+    }
+
+    public int getCurrentTryCount() {
+        return currentBoardsIndex + 1;
     }
 
 }

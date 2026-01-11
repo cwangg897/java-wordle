@@ -14,4 +14,9 @@ public enum ResultValues {
     public String getValue() {
         return value;
     }
+
+    public static String correct() {
+        return String.valueOf(ResultValues.그린.getValue())
+            .repeat(Math.max(0, WordCondition.입력_제한_길이.getValue()));
+    }
 }
