@@ -1,3 +1,5 @@
+package domain.model;
+
 public enum ResultValues {
 
     그린("🟩"),

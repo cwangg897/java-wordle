@@ -1,3 +1,9 @@
+package domain.service;
+
+import domain.model.Result;
+import domain.model.ResultValues;
+import domain.model.WordCondition;
+
 public class Game {
 
     private final Result result;

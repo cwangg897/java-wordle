@@ -1,4 +1,6 @@
 
+package domain.model;
+
 public enum WordCondition {
     입력_제한_길이(5),
     입력_제한_횟수(6),

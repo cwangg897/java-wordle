@@ -1,3 +1,8 @@
+package domain.model;
+
+import application.port.OutputPort;
+import domain.port.WordRepository;
+
 import static java.util.Objects.isNull;
 
 import java.util.HashMap;
@@ -7,10 +12,14 @@ public class Word {
 
     private Answer answer;
     private Input input;
+    private WordRepository wordRepository;
+    private OutputPort outputPort;
 
-    public Word(Input input, Answer answer) {
+    public Word(Input input, Answer answer, WordRepository wordRepository, OutputPort outputPort) {
         this.input = input;
         this.answer = answer;
+        this.wordRepository = wordRepository;
+        this.outputPort = outputPort;
     }
 
     public void valid() {
@@ -26,8 +35,8 @@ public class Word {
     }
 
     public void validWord(String input) {
-        if(!WordRepository.hasWord(input)){
-            System.out.println(Output.getHasNotWordRepository());
+        if(!this.wordRepository.hasWord(input)){
+            System.out.println(this.outputPort.getHasNotWordRepository());
         }
     }
 

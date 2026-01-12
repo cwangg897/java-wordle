@@ -1,6 +1,11 @@
+package domain.service;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import domain.model.Result;
+import domain.model.ResultValues;
+import domain.service.Game;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

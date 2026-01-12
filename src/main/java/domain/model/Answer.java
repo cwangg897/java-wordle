@@ -1,3 +1,5 @@
+package domain.model;
+
 public class Answer {
 
     private String value;

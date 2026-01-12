@@ -1,7 +1,13 @@
+package infrastructure.adapter.in;
+
+import application.port.OutputPort;
+
+import domain.model.WordCondition;
 import java.util.Objects;
 
-public class Output {
+public class ConsoleOutputAdapter implements OutputPort {
 
+    @Override
     public String getWelcomeMessage() {
         int inputMaxCount = WordCondition.입력_제한_횟수.getValue();
         return String.format("WORDLE을 %d 번 만에 맞춰 보세요.\n"
@@ -10,11 +16,13 @@ public class Output {
 
     }
 
-   public String getInputInfoMessage() {
-       return "정답을 입력해 주세요.";
-   }
+    @Override
+    public String getInputInfoMessage() {
+        return "정답을 입력해 주세요.";
+    }
 
-   public String getBoards(StringBuilder[] boards) {
+    @Override
+    public String getBoards(StringBuilder[] boards) {
         StringBuilder result = new StringBuilder();
         for (StringBuilder board : boards) {
             if (Objects.nonNull(board)) {
@@ -22,10 +30,10 @@ public class Output {
             }
         }
         return result.toString();
-   }
+    }
 
-   public static String getHasNotWordRepository(){
+    @Override
+    public String getHasNotWordRepository(){
         return "답안은 `words.txt`에 존재하는 단어여야 합니다";
-   }
-
+    }
 }

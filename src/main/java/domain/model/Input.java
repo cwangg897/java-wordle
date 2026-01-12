@@ -1,3 +1,5 @@
+package domain.model;
+
 public class Input {
 
     private String value;
