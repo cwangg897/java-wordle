@@ -1,42 +1,31 @@
 package domain.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Result {
 
-    private StringBuilder board;
-    private StringBuilder[] boards = new StringBuilder[WordCondition.입력_제한_횟수.getValue()];
-    private int currentBoardsIndex = 0;
-
-    public Result() {
-        this.board = new StringBuilder();
-    }
+    private StringBuilder board = new StringBuilder();
+    private List<StringBuilder> boards = new ArrayList<>();
 
     public void addTile(String tile) {
-        this.board.append(tile);
+        board.append(tile);
     }
 
     public void addBoard() {
-        this.boards[currentBoardsIndex] = this.board;
-        currentBoardsIndex++;
-        this.board = new StringBuilder();
+        boards.add(board);
+        board = new StringBuilder();
     }
 
     public String getBoard() {
-        return this.board.toString();
+        return board.toString();
     }
 
     public int getCurrentTryCount() {
-        return currentBoardsIndex + 1;
+        return boards.size() + 1;
     }
 
-    public void setCurrentBoardsIndex(int currentBoardsIndex) {
-        this.currentBoardsIndex = currentBoardsIndex;
-    }
-
-    public void setBoard(StringBuilder board) {
-        this.board = board;
-    }
-
-    public StringBuilder[] getBoards() {
+    public List<StringBuilder> getBoards() {
         return boards;
     }
 }

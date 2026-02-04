@@ -18,10 +18,10 @@ public class Game {
 
     public void updateFinished() {
         if (ResultValues.correct().equals(result.getBoard())) {
-            this.isFinished = Boolean.TRUE;
+            this.isFinished = true;
         }
         if (WordCondition.입력_제한_횟수.getValue() == result.getCurrentTryCount()) {
-            this.isFinished = Boolean.TRUE;
+            this.isFinished = false;
         }
     }
 

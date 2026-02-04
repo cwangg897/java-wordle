@@ -95,7 +95,7 @@ public class Word {
         }
     }
 
-    private static void checkedNotGreen(int length, ResultValues[] results, String input,
+    private void checkedNotGreen(int length, ResultValues[] results, String input,
         Map<Character, Integer> remain) {
         for (int i = 0; i < length; i++) {
             if (results[i] != null) {

@@ -2,7 +2,7 @@ package domain.model;
 
 public class Answer {
 
-    private String value;
+    private final String value;
 
     // 기본 생성자는 apple로 생성한다.
     public Answer(){

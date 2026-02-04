@@ -8,11 +8,16 @@ public enum WordCondition {
 
     private final int value;
 
-    public int getValue() {
-        return value;
+    WordCondition(int value) {
+        if (value < 0) {
+            throw new IllegalArgumentException(
+                name() + "는 음수가 될 수 없습니다. value=" + value
+            );
+        }
+        this.value = value;
     }
 
-    WordCondition(int length) {
-        this.value = length;
+    public int getValue() {
+        return value;
     }
 }
